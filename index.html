@@ -68,6 +68,11 @@
             background-color: rgba(240, 249, 255, 0.8); 
             z-index: -1;
         }
+        .blur-photo {
+            background-size: cover;
+            filter: blur(1px); /* 10% kira-kira setara blur tipis (3–5px) */
+            transform: scale(1.05); /* biar tidak ada garis kosong di tepi karena blur */
+        }
     </style>
 </head>
 <body class="bg-sky-50 overflow-hidden"> <!-- THEME: Changed bg-stone-50 to bg-sky-50 -->
@@ -81,10 +86,10 @@
             Saya telah mengatur agar gambar yang sama terbelah dua.
         -->
         <!-- Left Photo -->
-        <div id="cover-left" class="absolute top-0 left-0 w-1/2 h-full cover-image" style="background-image: url('cover.png'); background-position: left center;"></div>
+        <div id="cover-left" class="absolute top-0 left-0 w-1/2 h-full cover-image blur-photo" style="background-image: url('cover.png'); background-position: left center;"></div>
         
         <!-- Right Photo -->
-        <div id="cover-right" class="absolute top-0 right-0 w-1/2 h-full cover-image" style="background-image: url('cover.png'); background-position: right center;"></div>
+        <div id="cover-right" class="absolute top-0 right-0 w-1/2 h-full cover-image blur-photo" style="background-image: url('cover.png'); background-position: right center;"></div>
 
         <!-- Dark Overlay for text readability -->
         <div class="absolute inset-0 bg-black/50"></div>
@@ -177,7 +182,7 @@
                         <p class="text-sky-800 font-semibold text-lg">Sabtu, 20 September 2025</p>
                         <p class="text-sky-600">11:00 WIB - Selesai</p>
                         <p class="text-sky-600 mt-4 font-semibold">Jln. Perusahaan RT 04 RW 02, Lukit</p>
-                         <a href="https://maps.app.goo.gl/NpBSVSD2B333vJWn8" class="mt-4 inline-block text-sm text-sky-700 hover:text-sky-900 transition font-semibold">Lihat Peta →</a>
+                         <a href="https://maps.app.goo.gl/8Q3zv5YAXvkG9SQz6" class="mt-4 inline-block text-sm text-sky-700 hover:text-sky-900 transition font-semibold">Lihat Peta →</a>
                     </div>
                 </div>
             </div>
