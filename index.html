@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan | Adnan & Bella</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Great Vibes for headings, Poppins for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- AOS.js (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS for font styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+        /* Style to ensure cover images fill their container */
+        .cover-image {
+            background-size: cover;
+            /* background-position is now set via inline style */
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease-in-out;
+        }
+        .cover-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-sky-50 overflow-hidden"> <!-- THEME: Changed bg-stone-50 to bg-sky-50 -->
+
+    <!-- ================================== -->
+    <!--          COVER SECTION             -->
+    <!-- ================================== -->
+    <div id="cover" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <!-- 
+            COVER IMAGE: Ganti URL di bawah dengan file 'cover.png' Anda.
+            Saya telah mengatur agar gambar yang sama terbelah dua.
+        -->
+        <!-- Left Photo -->
+        <div id="cover-left" class="absolute top-0 left-0 w-1/2 h-full cover-image" style="background-image: url('cover.png'); background-position: left center;"></div>
+        
+        <!-- Right Photo -->
+        <div id="cover-right" class="absolute top-0 right-0 w-1/2 h-full cover-image" style="background-image: url('cover.png'); background-position: right center;"></div>
+
+        <!-- Dark Overlay for text readability -->
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <!-- Cover Content -->
+        <div class="relative z-10 text-center text-white p-4 animate-fade-in">
+            <p class="text-base md:text-xl tracking-widest mb-4 font-light">Walimatul 'urs</p>
+            <h1 class="font-great-vibes text-5xl sm:text-6xl md:text-8xl mb-6">Hamdan & Rani</h1>
+            <p class="mb-2 text-sm md:text-base">Kepada Yth.</p>
+            <p class="font-bold text-lg md:text-xl" id="guest-name"><span id="nama-undangan">Tamu Undangan</span></p>
+            <button id="open-invitation" class="mt-8 px-6 py-3 md:px-8 bg-white/20 backdrop-blur-sm border border-white/50 rounded-full text-white hover:bg-white hover:text-sky-800 transition-all duration-300 shadow-lg text-sm md:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <!-- Ganti dengan link musik Anda -->
+        <source src="janjisuci.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+
+    <!-- ================================== -->
+    <!--           MAIN CONTENT             -->
+    <!-- ================================== -->
+    <main id="main-content" class="opacity-0">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed" style="background-image: url('hero.jpg')">
+            <div class="bg-black/50 p-6 md:p-10 rounded-lg max-w-4xl mx-4">
+                <div data-aos="fade-up">
+                    <p class="text-white text-xl md:text-3xl mb-4">Kami akan menikah</p>
+                    <h1 class="font-great-vibes text-6xl sm:text-7xl md:text-9xl text-white">Hamdan </br>&</br> Rani</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Couple Section -->
+        <section class="py-16 md:py-20 px-4 sm:px-6 bg-white relative overflow-hidden">
+             <!-- ASSET DEKORATIF: Ganti src dengan file aset Anda -->
+            <img src="aset1.png" alt="ornament" class="absolute -top-8 -left-8 w-32 h-32 opacity-30 hidden md:block" data-aos="fade-down-right">
+            <img src="aset2.png" alt="ornament" class="absolute -bottom-8 -right-8 w-32 h-32 opacity-30 hidden md:block" data-aos="fade-up-left">
+
+            <div class="container mx-auto text-center max-w-4xl">
+                <div data-aos="fade-up">
+                    <h2 class="font-great-vibes text-5xl text-sky-800 mb-4">Pasangan Mempelai</h2>
+                    <p class="text-sky-700 max-w-2xl mx-auto text-sm leading-relaxed">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."<br>(QS. Ar-Rum: 21)</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-12 md:mt-16">
+                    <!-- Groom -->
+                    <div class="text-center" data-aos="fade-right">
+                        <img src="Hamdan.jpg" alt="Hamdan" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-white">
+                        <h3 class="font-great-vibes text-4xl text-sky-900">Hamdan Junaidi</h3>
+                        <p class="text-sky-800 mt-2 text-sm md:text-base">Putra dari Bapak Saptono & Ibu Poniah</p>
+                    </div>
+
+                    <div class="font-great-vibes text-5xl md:text-6xl text-sky-300 my-0 md:my-0" data-aos="zoom-in">&</div>
+
+                    <!-- Bride -->
+                    <div class="text-center" data-aos="fade-left">
+                        <img src="Rani.jpg" alt="Rani" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-white">
+                        <h3 class="font-great-vibes text-4xl text-sky-900">Zakiyatul Khoirani</h3>
+                        <p class="text-sky-800 mt-2 text-sm md:text-base">Putri dari Bapak Mukhtarom S.Pdi & Ibu Sariani</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Event Details Section -->
+        <section class="py-16 md:py-20 px-4 sm:px-6 bg-sky-100">
+            <div class="container mx-auto text-center max-w-4xl">
+                <div data-aos="fade-up">
+                    <h2 class="font-great-vibes text-5xl text-sky-800 mb-12">Detail Acara</h2>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    <!-- Akad Nikah -->
+                    <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up">
+                        <h3 class="font-great-vibes text-4xl text-sky-900 mb-4">Akad Nikah</h3>
+                        <p class="text-sky-800 font-semibold text-lg">Minggu, 14 September 2025</p>
+                        <p class="text-sky-600">14:00 WIB - Selesai</p>
+                        <p class="text-sky-600 mt-4 font-semibold">RT 07 RW 04, Parit 3, Sabak Permai</p>
+                        <a href="https://maps.app.goo.gl/2BKQojZaAqJxFuZv8" class="mt-4 inline-block text-sm text-sky-700 hover:text-sky-900 transition font-semibold">Lihat Peta →</a>
+                    </div>
+                    <!-- Resepsi -->
+                    <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="font-great-vibes text-4xl text-sky-900 mb-4">Resepsi</h3>
+                        <p class="text-sky-800 font-semibold text-lg">Sabtu, 20 September 2025</p>
+                        <p class="text-sky-600">11:00 WIB - Selesai</p>
+                        <p class="text-sky-600 mt-4 font-semibold">Jln. Perusahaan RT 04 RW 02, Lukit</p>
+                         <a href="https://maps.app.goo.gl/NpBSVSD2B333vJWn8" class="mt-4 inline-block text-sm text-sky-700 hover:text-sky-900 transition font-semibold">Lihat Peta →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Photo Gallery Section -->
+        <section class="py-16 md:py-20 px-4 sm:px-6 bg-white">
+            <div class="container mx-auto text-center max-w-5xl">
+                <div data-aos="fade-up">
+                    <h2 class="font-great-vibes text-5xl text-sky-800 mb-12">Galeri Kenangan</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Ganti src dengan foto-foto Anda -->
+                    <div data-aos="fade-up">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+1" alt="Gallery Photo 1" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+2" alt="Gallery Photo 2" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+3" alt="Gallery Photo 3" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+4" alt="Gallery Photo 4" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                    <div data-aos="fade-up">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+5" alt="Gallery Photo 5" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+6" alt="Gallery Photo 6" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+7" alt="Gallery Photo 7" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                     <div data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/400x400/a7d8f0/FFFFFF?text=Foto+8" alt="Gallery Photo 8" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300 cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center py-8 bg-sky-900 text-white">
+			© 2025 <a href="https://jazaniest.vercel.app">JZX's Code</a>. All Rights Reserved. </br>
+            <a href="https://jazaniest.vercel.app">Click here for collaboration or order</a>
+        </footer>
+    </main>
+
+    <!-- GSAP (GreenSock Animation Platform) CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- AOS.js JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Whether animation should happen only once - while scrolling down
+            offset: 100, // Offset (in px) from the original trigger point
+        });
+
+        // Select the necessary elements from the DOM
+        const openButton = document.getElementById('open-invitation');
+        const cover = document.getElementById('cover');
+        const coverLeft = document.getElementById('cover-left');
+        const coverRight = document.getElementById('cover-right');
+        const audio = document.getElementById('background-music');
+        const mainContent = document.getElementById('main-content');
+        const body = document.body;
+
+        // Add a click event listener to the "Open Invitation" button
+        openButton.addEventListener('click', () => {
+            // Attempt to play the background music
+            audio.play().catch(error => {
+                // Autoplay might be blocked by the browser. This is a fallback.
+                console.log("Music autoplay was prevented by the browser:", error);
+            });
+
+            // GSAP animation to open the "gates"
+            gsap.to(coverLeft, {
+                x: '-100%', // Move 100% of its width to the left
+                duration: 1.5,
+                ease: 'power3.inOut'
+            });
+
+            gsap.to(coverRight, {
+                x: '100%', // Move 100% of its width to the right
+                duration: 1.5,
+                ease: 'power3.inOut'
+            });
+
+            // GSAP animation to fade out the entire cover after the gates open
+            gsap.to(cover, {
+                opacity: 0,
+                delay: 1.2, // Start this animation slightly before the gates finish opening
+                duration: 0.8,
+                onComplete: () => {
+                    // Hide the cover permanently after the animation is complete
+                    cover.style.display = 'none';
+                    // Allow the user to scroll the page
+                    body.classList.remove('overflow-hidden');
+                }
+            });
+
+            // GSAP animation to fade in the main content
+            gsap.to(mainContent, {
+                opacity: 1,
+                delay: 1.5, // Start after the cover begins to fade
+                duration: 1
+            });
+        });
+    </script>
+</body>
+</html>
