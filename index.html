@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan | Adnan & Bella</title>
+    <title>Undangan Pernikahan | Hamdan & Rani</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,6 +34,40 @@
         .cover-image:hover {
             transform: scale(1.05);
         }
+        
+        /* NEW: CSS for blurred background sections */
+        .section-with-bg {
+            position: relative;
+            overflow: hidden; /* Ensures blur doesn't bleed out */
+            z-index: 1;
+        }
+        .section-with-bg::before {
+            content: '';
+            position: absolute;
+            top: -10px; /* Extend slightly to avoid blurred edges */
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            /* Ganti URL ini dengan gambar background Anda */
+            background-image: url('bg-cover.jpg');
+            background-attachment: fixed; /* Optional: Creates a parallax effect */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        /* Adds a semi-transparent overlay to ensure text readability */
+        .section-with-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Light sky blue overlay to match the theme */
+            background-color: rgba(240, 249, 255, 0.8); 
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="bg-sky-50 overflow-hidden"> <!-- THEME: Changed bg-stone-50 to bg-sky-50 -->
@@ -62,7 +96,7 @@
             <p class="mb-2 text-sm md:text-base">Kepada Yth.</p>
             <p class="font-bold text-lg md:text-xl" id="guest-name"><span id="nama-undangan">Tamu Undangan</span></p>
             <button id="open-invitation" class="mt-8 px-6 py-3 md:px-8 bg-white/20 backdrop-blur-sm border border-white/50 rounded-full text-white hover:bg-white hover:text-sky-800 transition-all duration-300 shadow-lg text-sm md:text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 Buka Undangan
             </button>
         </div>
@@ -84,19 +118,19 @@
         <section class="min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed" style="background-image: url('hero.jpg')">
             <div class="bg-black/50 p-6 md:p-10 rounded-lg max-w-4xl mx-4">
                 <div data-aos="fade-up">
-                    <p class="text-white text-xl md:text-3xl mb-4">Kami akan menikah</p>
-                    <h1 class="font-great-vibes text-6xl sm:text-7xl md:text-9xl text-white">Hamdan </br>&</br> Rani</h1>
+                    <p class="text-white text-xl md:text-3xl mb-4">Ngunduh Mantu</p>
+                    <h1 class="font-great-vibes text-5xl sm:text-6xl md:text-7xl text-white">Hamdan </br>&</br> Rani</h1>
                 </div>
             </div>
         </section>
 
         <!-- Couple Section -->
-        <section class="py-16 md:py-20 px-4 sm:px-6 bg-white relative overflow-hidden">
+        <section class="py-16 md:py-20 px-4 sm:px-6 section-with-bg">
              <!-- ASSET DEKORATIF: Ganti src dengan file aset Anda -->
             <img src="aset1.png" alt="ornament" class="absolute -top-8 -left-8 w-32 h-32 opacity-30 hidden md:block" data-aos="fade-down-right">
             <img src="aset2.png" alt="ornament" class="absolute -bottom-8 -right-8 w-32 h-32 opacity-30 hidden md:block" data-aos="fade-up-left">
 
-            <div class="container mx-auto text-center max-w-4xl">
+            <div class="container mx-auto text-center max-w-4xl relative z-10">
                 <div data-aos="fade-up">
                     <h2 class="font-great-vibes text-5xl text-sky-800 mb-4">Pasangan Mempelai</h2>
                     <p class="text-sky-700 max-w-2xl mx-auto text-sm leading-relaxed">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."<br>(QS. Ar-Rum: 21)</p>
@@ -123,14 +157,14 @@
         </section>
 
          <!-- Event Details Section -->
-        <section class="py-16 md:py-20 px-4 sm:px-6 bg-sky-100">
-            <div class="container mx-auto text-center max-w-4xl">
+        <section class="py-16 md:py-20 px-4 sm:px-6 section-with-bg">
+            <div class="container mx-auto text-center max-w-4xl relative z-10">
                 <div data-aos="fade-up">
                     <h2 class="font-great-vibes text-5xl text-sky-800 mb-12">Detail Acara</h2>
                 </div>
                 <div class="flex flex-col md:flex-row justify-center gap-8">
                     <!-- Akad Nikah -->
-                    <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up">
+                    <div class="bg-white/70 backdrop-blur-sm border border-white/50 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up">
                         <h3 class="font-great-vibes text-4xl text-sky-900 mb-4">Akad Nikah</h3>
                         <p class="text-sky-800 font-semibold text-lg">Minggu, 14 September 2025</p>
                         <p class="text-sky-600">14:00 WIB - Selesai</p>
@@ -138,7 +172,7 @@
                         <a href="https://maps.app.goo.gl/2BKQojZaAqJxFuZv8" class="mt-4 inline-block text-sm text-sky-700 hover:text-sky-900 transition font-semibold">Lihat Peta →</a>
                     </div>
                     <!-- Resepsi -->
-                    <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white/70 backdrop-blur-sm border border-white/50 p-6 md:p-8 rounded-lg flex-1 shadow-md" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="font-great-vibes text-4xl text-sky-900 mb-4">Resepsi</h3>
                         <p class="text-sky-800 font-semibold text-lg">Sabtu, 20 September 2025</p>
                         <p class="text-sky-600">11:00 WIB - Selesai</p>
@@ -150,8 +184,8 @@
         </section>
 
         <!-- NEW: Photo Gallery Section -->
-        <section class="py-16 md:py-20 px-4 sm:px-6 bg-white">
-            <div class="container mx-auto text-center max-w-5xl">
+        <section class="py-16 md:py-20 px-4 sm:px-6 section-with-bg">
+            <div class="container mx-auto text-center max-w-5xl relative z-10">
                 <div data-aos="fade-up">
                     <h2 class="font-great-vibes text-5xl text-sky-800 mb-12">Galeri Kenangan</h2>
                 </div>
@@ -259,3 +293,4 @@
     </script>
 </body>
 </html>
+
